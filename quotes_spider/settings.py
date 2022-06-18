@@ -3,7 +3,7 @@ import os
 ZYTE_SMARTPROXY_APIKEY = os.getenv('ZYTE_KEY')
 BOT_NAME = 'quotes_spider'
 
-SPIDER_MODULES = ['quotes_spider.spiders']
+SPIDER_MODULES = ["quotes_spider.spiders"]
 NEWSPIDER_MODULE = 'quotes_spider.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -21,5 +21,10 @@ DOWNLOAD_DELAY = 5
 AUTOTHROTTLE_ENABLED = True
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
+<<<<<<< HEAD
     "quotes_spider.pipelines.QuotesSpiderPipeline": 300
 }
+=======
+    'quotes_spider.pipelines.QuotesSpiderPipeline': 300
+}
+>>>>>>> e057593dc475b285dcdff453a14e76c0c5d7b816
