@@ -1,3 +1,4 @@
+import os 
 # Scrapy settings for quotes_spider project
 #
 # For simplicity, this file contains only settings considered important or
@@ -12,9 +13,8 @@ BOT_NAME = 'quotes_spider'
 SPIDER_MODULES = ['quotes_spider.spiders']
 NEWSPIDER_MODULE = 'quotes_spider.spiders'
 
-
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'quotes_spider (+http://www.yourdomain.com)'
+USER_AGENT = "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.1"
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -25,7 +25,10 @@ ROBOTSTXT_OBEY = True
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-#DOWNLOAD_DELAY = 3
+#PROXY_LIST = '/Users/ilucash/Documents/python/web_scraping/course/quotes_spider/quotes_spider/proxie_list.txt'
+#PROXY_MODE = 0
+#RETRY_TIMES = 10
+#RETRY_HTTP_CODES = [500, 503, 504, 400, 403, 404, 408]
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -46,12 +49,23 @@ ROBOTSTXT_OBEY = True
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
 #    'quotes_spider.middlewares.QuotesSpiderSpiderMiddleware': 543,
-#}
+#
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
+DOWNLOADER_MIDDLEWARES = {
+    'scrapy_zyte_smartproxy.ZyteSmartProxyMiddleware': 610
+    }
+ZYTE_SMARTPROXY_ENABLED = True
+ZYTE_SMARTPROXY_APIKEY = os.getenv('ZYTE_KEY')
+CONCURRENT_REQUESTS_PER_DOMAIN = 8
+DOWNLOAD_DELAY = 5
+AUTOTHROTTLE_ENABLED = True
 #DOWNLOADER_MIDDLEWARES = {
-#    'quotes_spider.middlewares.QuotesSpiderDownloaderMiddleware': 543,
+#    'scrapy.downloadermiddlewares.retry.RetryMiddleware': 90,
+#    'scrapy_proxies.RandomProxy': 100,
+#    'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 110
+    #'quotes_spider.middlewares.QuotesSpiderDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -62,9 +76,9 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'quotes_spider.pipelines.QuotesSpiderPipeline': 300,
-#}
+ITEM_PIPELINES = {
+    'quotes_spider.pipelines.QuotesSpiderPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
