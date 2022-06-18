@@ -21,5 +21,5 @@ DOWNLOAD_DELAY = 5
 AUTOTHROTTLE_ENABLED = True
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'quotes_spider.pipelines.QuotesSpiderPipeline': 300,
+    'quotes_spider.pipelines.QuotesSpiderPipeline': 300
 }
