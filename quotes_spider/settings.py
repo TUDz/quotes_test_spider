@@ -13,7 +13,7 @@ USER_AGENT = "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefo
 ROBOTSTXT_OBEY = True
 
 DOWNLOADER_MIDDLEWARES = {
-    'scrapy_zyte_smartproxy.ZyteSmartProxyMiddleware': 610
+    "scrapy_zyte_smartproxy.ZyteSmartProxyMiddleware": 610
     }
 ZYTE_SMARTPROXY_ENABLED = True
 CONCURRENT_REQUESTS_PER_DOMAIN = 8
@@ -21,5 +21,5 @@ DOWNLOAD_DELAY = 5
 AUTOTHROTTLE_ENABLED = True
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'quotes_spider.pipelines.QuotesSpiderPipeline': 300
+    "quotes_spider.pipelines.QuotesSpiderPipeline": 300
 }
