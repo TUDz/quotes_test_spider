@@ -3,7 +3,7 @@ import os
 ZYTE_SMARTPROXY_APIKEY = os.getenv('ZYTE_KEY')
 BOT_NAME = 'quotes_spider'
 
-SPIDER_MODULES = ['quotes_spider.spiders']
+SPIDER_MODULES = ["quotes_spider.spiders"]
 NEWSPIDER_MODULE = 'quotes_spider.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
