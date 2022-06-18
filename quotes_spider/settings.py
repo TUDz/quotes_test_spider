@@ -1,10 +1,10 @@
 ### This is only used for testing purposes on dev environment
 import os
-ZYTE_SMARTPROXY_APIKEY = os.getenv('ZYTE_KEY')
-BOT_NAME = 'quotes_spider'
-
+BOT_NAME = "quotes_spider"
 SPIDER_MODULES = ["quotes_spider.spiders"]
-NEWSPIDER_MODULE = 'quotes_spider.spiders'
+NEWSPIDER_MODULE = "quotes_spider.spiders"
+ZYTE_SMARTPROXY_APIKEY = os.getenv('ZYTE_KEY')
+
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 USER_AGENT = "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.1"
