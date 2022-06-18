@@ -1,4 +1,3 @@
-import os 
 # Scrapy settings for quotes_spider project
 #
 # For simplicity, this file contains only settings considered important or
@@ -25,7 +24,6 @@ ROBOTSTXT_OBEY = True
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-#PROXY_LIST = '/Users/ilucash/Documents/python/web_scraping/course/quotes_spider/quotes_spider/proxie_list.txt'
 #PROXY_MODE = 0
 #RETRY_TIMES = 10
 #RETRY_HTTP_CODES = [500, 503, 504, 400, 403, 404, 408]
